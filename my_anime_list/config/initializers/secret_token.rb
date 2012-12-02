@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-MyAnimeList::Application.config.secret_token = '83d0e3c4b172da9e8fc60be6e68e493ff4310d72d9c41d7c1d80fb460ce906068d40172722ddbc0e8b1e7fac927075b29e97f2c49d8aafb45fcfcf181fad82ed'
+MyAnimeList::Application.config.secret_token = 'f327a4a8e929f5095fe91a7f52ae69b7631b14f62606aa292ac2e617e550d1e122964e202df731fa1646d21bb7ff216207e42583a1f1cfa8f1d85d0b32e21dbc'
