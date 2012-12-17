@@ -11,9 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202191339) do
+ActiveRecord::Schema.define(:version => 20121217095146) do
 
-  create_table "fortunes", :force => true do |t|
+  create_table "animes", :force => true do |t|
+    t.string   "user"
     t.string   "title"
     t.integer  "episodes"
     t.text     "description"

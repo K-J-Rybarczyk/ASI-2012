@@ -1,5 +1,5 @@
 MyAnimeList::Application.routes.draw do
-  resources :fortunes
+  resources :animes
 
 
   # The priority is based upon order of creation:

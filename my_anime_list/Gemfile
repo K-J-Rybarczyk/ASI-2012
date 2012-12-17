@@ -12,8 +12,6 @@ gem 'pg', '~> 0.14.1',      :groups => :production
 #   http://rubydoc.info/github/jnicklas/capybara#Using_Capybara_with_RSpec
 gem 'capybara', '~> 1.1.2', :groups => :test
 
-gem "carrierwave"
-
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
@@ -27,13 +25,12 @@ group :development, :test do
   gem 'hirb', '~> 0.7.0'
   gem 'quiet_assets', '~> 1.0.1'  # wylacza logowanie *assets pipeline*
   gem 'rspec-rails', '~> 2.11.0'
-  
+
   # Bezproblemowe zapełnianie bazy danymi testowymi:
   #   https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'populator'
-
 end
 
 gem 'less-rails', '~> 2.2.6'
