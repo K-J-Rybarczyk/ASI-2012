@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:user) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:episodes) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -18,7 +17,6 @@
     <% @animes.each do |anime| %>
       <tr>
         <td><%= link_to anime.id, anime_path(anime) %></td>
-        <td><%= anime.user %></td>
         <td><%= anime.title %></td>
         <td><%= anime.episodes %></td>
         <td><%= anime.description %></td>

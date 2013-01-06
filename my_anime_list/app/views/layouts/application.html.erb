@@ -30,9 +30,7 @@
     <!-- Size should be 32 x 32 pixels -->
   </head>
   <body>
-
     <%= render partial: 'shared/navbar' %>
-
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -48,6 +46,12 @@
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
+            <% if current_user %>
+              Welcome <%= current_user.name %>
+              <%= link_to "Sign Out", signout_path %>
+            <% else %>
+              <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+            <% end %>
           </div><!--/.nav-collapse -->
         </div>
       </div>
