@@ -5,11 +5,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:episodes) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -17,12 +15,11 @@
     <% if current_user %>
       <% @animes.each do |anime| %>
         <tr>
-          <td><%= link_to anime.id, anime_path(anime) %></td>
           <td><%= anime.title %></td>
           <td><%= anime.episodes %></td>
           <td><%= anime.description %></td>
-          <td><%=l anime.created_at %></td>
           <td>
+
             <%= link_to t('.edit', :default => t("helpers.links.edit")),
                         edit_anime_path(anime), :class => 'btn btn-mini' %>
             <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
