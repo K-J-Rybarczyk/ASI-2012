@@ -2,18 +2,19 @@ class AnimesController < ApplicationController
   # GET /animes
   # GET /animes.json
   def index
-    @animes = Anime.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @animes }
-    end
+      @animes = current_user.animes.all unless current_user.nil?
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @animes }
+      end
   end
 
   # GET /animes/1
   # GET /animes/1.json
   def show
-    @anime = Anime.find(params[:id])
+    @anime = current_user.animes.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +25,7 @@ class AnimesController < ApplicationController
   # GET /animes/new
   # GET /animes/new.json
   def new
-    @anime = Anime.new
+    @anime = current_user.animes.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +35,13 @@ class AnimesController < ApplicationController
 
   # GET /animes/1/edit
   def edit
-    @anime = Anime.find(params[:id])
+    @anime = current_user.animes.find(params[:id])
   end
 
   # POST /animes
   # POST /animes.json
   def create
-    @anime = Anime.new(params[:anime])
+    @anime = current_user.animes.new(params[:anime])
 
     respond_to do |format|
       if @anime.save
@@ -56,7 +57,7 @@ class AnimesController < ApplicationController
   # PUT /animes/1
   # PUT /animes/1.json
   def update
-    @anime = Anime.find(params[:id])
+    @anime = current_user.animes.find(params[:id])
 
     respond_to do |format|
       if @anime.update_attributes(params[:anime])
@@ -72,7 +73,7 @@ class AnimesController < ApplicationController
   # DELETE /animes/1
   # DELETE /animes/1.json
   def destroy
-    @anime = Anime.find(params[:id])
+    @anime = current_user.animes.find(params[:id])
     @anime.destroy
 
     respond_to do |format|
